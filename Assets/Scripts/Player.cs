@@ -5,6 +5,7 @@ using UnityEngine.Rendering;
 public class Player : MonoBehaviour
 {
     private Vector2 mousePos;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
