@@ -1,8 +1,10 @@
 using UnityEngine;
+using TMPro;
 
-public class Drop : MonoBehaviour
+public class Score : MonoBehaviour
 {
-    private float speed = 7;
+    public BucketGroup bucketGroup;
+    public TextMeshProUGUI scoreText;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -13,6 +15,6 @@ public class Drop : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position += speed * Time.deltaTime * Vector3.down;
+        scoreText.text = "Score: " + bucketGroup.score;
     }
 }
