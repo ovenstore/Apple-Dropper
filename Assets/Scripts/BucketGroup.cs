@@ -1,4 +1,5 @@
 using UnityEngine;
+using TMPro;
 using UnityEngine.InputSystem;
 using UnityEngine.Rendering;
 
@@ -13,6 +14,9 @@ public class BucketGroup : MonoBehaviour
     public GameObject bucket1;
     public GameObject bucket2;
     public GameObject bucket3;
+
+    public GameObject gameOverPanel;
+    public TextMeshProUGUI finalScoreText;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -45,7 +49,9 @@ public class BucketGroup : MonoBehaviour
         else if (buckets == 1)
         {
             Destroy(bucket1);
-            // Cut to game over screen   
+
+            // end the game
+            GameOver();
         } 
 
         buckets--;
@@ -56,6 +62,12 @@ public class BucketGroup : MonoBehaviour
     {
         Destroy(other.gameObject);
         score++;
+    }
+
+    void GameOver()
+    {
+        gameOverPanel.SetActive(true);
+        finalScoreText.text = "Final Score: " + score;
     }
 }
 
